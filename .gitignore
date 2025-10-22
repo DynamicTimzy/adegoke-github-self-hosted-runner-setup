@@ -1,0 +1,35 @@
+# Ignore the self-hosted runner setup directory
+actions-runner/
+actions-runner.zip
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# Python / Node cache (if used during testing)
+__pycache__/
+node_modules/
+
+# System or hidden files
+.env
+*.secret
+*.token
+
+# GitHub workflow temp files
+.github/workflows/*.bak
+.github/workflows/*.tmp
+
+# Backup or generated files
+*.old
+*.orig

@@ -1,0 +1,104 @@
+name: Test Self-Hosted Runner
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  test-self-hosted:
+    runs-on: self-hosted
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Display runner information
+        run: |
+          Write-Host "=========================================="
+          Write-Host "Runner Information"
+          Write-Host "=========================================="
+          Write-Host "Runner Name: $env:RUNNER_NAME"
+          Write-Host "Runner OS: $env:RUNNER_OS"
+          Write-Host "Runner Arch: $env:RUNNER_ARCH"
+          Write-Host "Working Directory: $pwd"
+          Write-Host ""
+      
+      - name: Display system information
+        run: |
+          Write-Host "=========================================="
+          Write-Host "System Information"
+          Write-Host "=========================================="
+          Write-Host "Computer Name: $env:COMPUTERNAME"
+          Write-Host "User: $env:USERNAME"
+          Write-Host "PowerShell Version: $($PSVersionTable.PSVersion)"
+          Write-Host ""
+          Write-Host "OS Information:"
+          Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion, OsArchitecture
+          Write-Host ""
+      
+      - name: Test file operations
+        run: |
+          Write-Host "=========================================="
+          Write-Host "Testing File Operations"
+          Write-Host "=========================================="
+          
+          # Create a test file
+          "Hello from self-hosted runner!" | Out-File test.txt
+          Write-Host "Created test.txt"
+          
+          # Read the file
+          $content = Get-Content test.txt
+          Write-Host "File content: $content"
+          
+          # Clean up
+          Remove-Item test.txt
+          Write-Host "Cleaned up test.txt"
+          Write-Host ""
+      
+      - name: Test network connectivity
+        run: |
+          Write-Host "=========================================="
+          Write-Host "Testing Network Connectivity"
+          Write-Host "=========================================="
+          
+          # Test connection to GitHub
+          try {
+            $response = Invoke-WebRequest -Uri "https://api.github.com" -UseBasicParsing
+            Write-Host "✓ Successfully connected to GitHub API"
+            Write-Host "Status Code: $($response.StatusCode)"
+          } catch {
+            Write-Host "✗ Failed to connect to GitHub API"
+            Write-Host "Error: $_"
+          }
+          Write-Host ""
+      
+      - name: List installed software
+        run: |
+          Write-Host "=========================================="
+          Write-Host "Checking Installed Tools"
+          Write-Host "=========================================="
+          
+          # Check for common development tools
+          $tools = @("git", "node", "python", "dotnet", "docker")
+          
+          foreach ($tool in $tools) {
+            try {
+              $version = & $tool --version 2>&1
+              Write-Host "✓ $tool is installed: $version"
+            } catch {
+              Write-Host "✗ $tool is not installed"
+            }
+          }
+          Write-Host ""
+      
+      - name: Success message
+        run: |
+          Write-Host "=========================================="
+          Write-Host "✓ All Tests Passed!"
+          Write-Host "=========================================="
+          Write-Host "Your self-hosted runner is working correctly!"
+          Write-Host ""
+
