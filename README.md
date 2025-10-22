@@ -132,9 +132,11 @@ The workflow will:
 -  List installed development tools
 -  Verify the runner is working correctly
 
-## Image of the runner listening for jobs
+### Image of the runner listening for jobs
 <img width="984" height="399" alt="image" src="https://github.com/user-attachments/assets/53196161-d079-438d-ada8-53cf0f303236" />
 
+### Image of the ACTIVE action on Github
+<img width="1146" height="330" alt="image" src="https://github.com/user-attachments/assets/2fb19e3b-d1f3-43af-a495-fd746219658e" />
 
 ### Using the Runner in Your Own Workflows
 
@@ -359,7 +361,13 @@ Before deploying to production:
 
 ##  Troubleshooting
 
-### Runner Won't Start
+### received the error cannot be loaded because running scripts is disabled on this system.
+
+**Solutions**
+1. Executed the script "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+" to bypass it. Documentation: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.5. 
+
+### Runner didn't Start
 
 **Symptoms**: Runner fails to start or connect to GitHub
 
@@ -430,3 +438,4 @@ Before deploying to production:
 - [Workflow Syntax for GitHub Actions](https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions)
 - [Security Hardening for GitHub Actions](https://docs.github.com/en/actions/security-guides/security-hardening-for-github-actions)
 - [Using Self-Hosted Runners in a Workflow](https://docs.github.com/en/actions/hosting-your-own-runners/using-self-hosted-runners-in-a-workflow)
+- [Execution policy](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.5)
