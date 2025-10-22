@@ -1,7 +1,7 @@
 # adegoke-github-self-hosted-runner-setup
 This repository contains a complete solution for setting up and running a GitHub Actions self-hosted runner on a Windows PC. The project includes automated setup scripts, service configuration, and a test workflow to verify the runner functionality.
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
