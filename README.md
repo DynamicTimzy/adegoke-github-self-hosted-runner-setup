@@ -6,7 +6,7 @@ This repository contains a complete solution for setting up and running a GitHub
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Quick Start](#quick-start)
-- [Detailed Setup Instructions](#detailed-setup-instructions)
+- [Detailed Setup process](#detailed-setup-process)
 - [Testing the Runner](#testing-the-runner)
 - [Managing the Runner](#managing-the-runner)
 - [Project Structure](#project-structure)
@@ -29,7 +29,7 @@ This project provides PowerShell scripts to automate the entire setup process on
 
 ##  Prerequisites
 
-Before starting, ensure you have:
+Before starting, ensured I have:
 
 - **Operating System**: Windows 10/11 or Windows Server 2016+
 - **PowerShell**: Version 5.1 or higher (pre-installed on Windows)
@@ -91,13 +91,13 @@ Press `Ctrl+C` to stop the runner.
 
 The runner is now active and will pick up jobs from your GitHub repository!
 
-##  Detailed Setup Instructions
+##  Detailed Setup Process
 
 ### Understanding the Runner Configuration
 
  run `config.cmd`, and was prompted for:
 
-1. **Runner Group**: Default is fine for most cases
+1. **Runner Group**: Default.
 2. **Runner Name**: A unique name to identify this runner (e.g., `windows-pc-01`)
 3. **Runner Labels**: Additional labels beyond the default `self-hosted`, `Windows`, `X64` (optional)
 4. **Work Folder**: Where workflow files will be stored (default: `_work`)
@@ -119,7 +119,7 @@ This repository includes a test workflow that exercises various aspects of the s
 
 ### Running the Test Workflow
 
-1. Push this repository to your GitHub account
+1. Push this repository to GitHub account
 2. Ensure your runner is active
 3. Go to the "Actions" tab in your repository
 4. Select the "Test Self-Hosted Runner" workflow
@@ -131,6 +131,10 @@ The workflow will:
 -  Test network connectivity
 -  List installed development tools
 -  Verify the runner is working correctly
+
+## Image of the runner listening for jobs
+<img width="984" height="399" alt="image" src="https://github.com/user-attachments/assets/53196161-d079-438d-ada8-53cf0f303236" />
+
 
 ### Using the Runner in Your Own Workflows
 
