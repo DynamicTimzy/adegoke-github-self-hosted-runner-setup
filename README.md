@@ -91,11 +91,11 @@ Press `Ctrl+C` to stop the runner.
 
 The runner is now active and will pick up jobs from your GitHub repository!
 
-## 📖 Detailed Setup Instructions
+##  Detailed Setup Instructions
 
 ### Understanding the Runner Configuration
 
-When you run `config.cmd`, you'll be prompted for:
+ run `config.cmd`, and was prompted for:
 
 1. **Runner Group**: Default is fine for most cases
 2. **Runner Name**: A unique name to identify this runner (e.g., `windows-pc-01`)
@@ -113,7 +113,7 @@ When you run `config.cmd`, you'll be prompted for:
 .\config.cmd --url https://github.com/DynamicTimzy/adegoke-github-self-hosted-runner-setup.git --unattended
 ```
 
-## 🧪 Testing the Runner
+##  Testing the Runner
 
 This repository includes a test workflow that exercises various aspects of the self-hosted runner.
 
@@ -151,7 +151,7 @@ jobs:
         run: Write-Host "Running on my self-hosted runner!"
 ```
 
-## 🔧 Managing the Runner
+##  Managing the Runner
 
 ### Starting and Stopping
 
@@ -196,7 +196,7 @@ cd $env:USERPROFILE\actions-runner
 .\scripts\cleanup-runner.ps1
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 github-actions-self-hosted-runner/
