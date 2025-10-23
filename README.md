@@ -36,7 +36,7 @@ Before starting, ensured I have:
 - **Administrator Access**: Required for service installation (optional)
 - **GitHub Repository**: A repository where you have admin access
 - **Network Access**: Ability to download files from GitHub and connect to github.com
-- **Disk Space**: At least 1GB of free disk space
+- **Disk Space**: At least 1GB of free disk space.
 
 ##  Quick Start
 
