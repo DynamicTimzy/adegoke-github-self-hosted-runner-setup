@@ -40,7 +40,7 @@ Before starting, ensured I have:
 
 ##  Quick Start
 
-### Step 1: Clone this Repository
+### Step 1: Created this Repository
 
 ```powershell
 git clone https://github.com/DynamicTimzy/adegoke-github-self-hosted-runner-setup.git
