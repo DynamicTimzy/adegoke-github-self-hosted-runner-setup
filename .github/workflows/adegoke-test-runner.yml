@@ -67,10 +67,10 @@ jobs:
           # Test connection to GitHub
           try {
             $response = Invoke-WebRequest -Uri "https://api.github.com" -UseBasicParsing
-            Write-Host "✓ Successfully connected to GitHub API"
+            Write-Host "[PASS] Successfully connected to GitHub API"
             Write-Host "Status Code: $($response.StatusCode)"
           } catch {
-            Write-Host "✗ Failed to connect to GitHub API"
+            Write-Host "[FAIL] Failed to connect to GitHub API"
             Write-Host "Error: $_"
           }
           Write-Host ""
@@ -87,9 +87,9 @@ jobs:
           foreach ($tool in $tools) {
             try {
               $version = & $tool --version 2>&1
-              Write-Host "✓ $tool is installed: $version"
+              Write-Host "[PASS] $tool is installed: $version"
             } catch {
-              Write-Host "✗ $tool is not installed"
+              Write-Host "[FAIL] $tool is not installed"
             }
           }
           Write-Host ""
@@ -97,7 +97,7 @@ jobs:
       - name: Success message
         run: |
           Write-Host "=========================================="
-          Write-Host "✓ All Tests Passed!"
+          Write-Host "[PASS] All Tests Passed!"
           Write-Host "=========================================="
           Write-Host "Your self-hosted runner is working correctly!"
           Write-Host ""
