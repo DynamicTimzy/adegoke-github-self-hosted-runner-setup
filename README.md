@@ -205,7 +205,7 @@ cd $env:USERPROFILE\actions-runner
 ##  Project Structure
 
 ```
-github-actions-self-hosted-runner/
+adegoke-github-self-hosted-runner-setup/
 ├── .github/
 │   └── workflows/
 │       └── test-runner.yml      # Test workflow for the runner
